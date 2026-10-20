@@ -19,6 +19,11 @@ The Express API behind WTWR, a weather-based clothing recommendation app. It han
 Node.js · Express · MongoDB Atlas · Mongoose · Celebrate/Joi · Winston · Render
 
 ## Running locally
+Create a `.env` file with:
+- `MONGODB_URI` - MongoDB connection string
+- `JWT_SECRET` - a long random string for signing tokens
+- `PORT` - optional, defaults to 3001
+
 `npm run start` - launch the server
 
 `npm run dev` - launch the server with hot reload via nodemon
