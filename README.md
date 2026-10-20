@@ -1,13 +1,29 @@
 # WTWR (What to Wear?): Back End
 
-This is a back-end Express project that focuses on creating a server for the WTWR application. Two collections of data are created to work with inside a database. The project uses schemas, controllers, and routes to establish item requirements and direct them to the database. It also employs Celebrate middleware using its Joi validation library for JavaScript as validation and error handling to insure that user entered data is valid and the correct server response is communicated if not. Winston s also used as a logging library for log information, including errors and requests. Not only do these tools inform the user of the application, but they allow for faster debugging by the developer. Security and testing is established and web applications are deployed on the Google Cloud. The goal was to create a server with an API and user authorization to implement requests from the front end react application and return valid data for the elements that a user interacts with.
+The Express API behind WTWR, a weather-based clothing recommendation app. It handles users, clothing items and likes, stores data in MongoDB, and serves the React front end.
 
-## Project Domain
+- Live API: https://wtwr-backend-gz5j.onrender.com
+- Live app: https://wtwr-frontend.vercel.app
+- Front-end code: https://github.com/dionshort/wtwr-frontend
 
-wtwr-short.jumpingcrab.com
+> Hosted on Render's free tier, so the first request after a period of inactivity can take up to a minute while the server wakes up.
 
-## Running the Project
+## Features
+- User sign-up and login with JWT authentication
+- Create, delete, like and unlike clothing items
+- Request validation with Celebrate (Joi), returning clear 400 errors for invalid data
+- Centralised error handling with consistent status codes (400, 401, 403, 404, 409, 500)
+- Request and error logging with Winston
 
-`npm run start` — to launch the server
+## Tech stack
+Node.js · Express · MongoDB Atlas · Mongoose · Celebrate/Joi · Winston · Render
 
-`npm run dev` — to launch the server with the hot reload feature via nodemon
+## Running locally
+Create a `.env` file with:
+- `MONGODB_URI` - MongoDB connection string
+- `JWT_SECRET` - a long random string for signing tokens
+- `PORT` - optional, defaults to 3001
+
+`npm run start` - launch the server
+
+`npm run dev` - launch the server with hot reload via nodemon
